@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript form validation</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+  <div>
+    <p>This is program for javascript based form vaidation.</p>
+    <section class="section" id="section">
+      <form action="#">
+        <div class="has-error error-msg" id="error-msg"></div>
+        <div class="form-group"><input type="text" class="username form-control" id="username" autofocus></div>
+        <div class="form-group"><input type="email" class="email form-control" id="email"></div>
+        <div class="form-group"><input type="password" class="password form-control" id="password"></div>
+        <div class="form-group"><input type="password" class="comfirmpassword form-control" id="confirmpassword"></div>
+        <div class="checkbox">
+          <label for="keepmeloggedin"><input type="checkbox" id="keepmeloggedin"> Keep me logged in</label>
+        </div>
+        <button class="btn btn-primary btn-block" onclick="validate()">Copy text</button>
+      </form>
+    </section>
+  </div>
+  <script type="text/javascript">
+    var validate = function () {
+      var username = document.getElementById('username');
+      var email = document.getElementById('email');
+      var password = document.getElementById('password');
+      var confirmPassword = document.getElementById('confirmpassword');
+      var keepLoggedIn = document.getElementById('keepmeloggedin');
+      var errorMsg = document.getElementById('error-msg');
+
+      if (username.value == "") {
+        errorMsg.innerHTML = "User name cannot be empty !!";
+      } else if (email.value == "") {
+        errorMsg.innerHTML = "Email cannot be empty !!";
+      } else if (password.value != confirmPassword.value) {
+        errorMsg.innerHTML = "Password dont match !!";
+      } else if (!keepLoggedIn.checked) {
+        errorMsg.innerHTML = "Please click on keep me logged in";
+      } else {
+        errorMsg.innerHTML = "All the fields are valid";
+      }
+    }
+  </script>
+</body>
+</html>
