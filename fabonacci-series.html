@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fabonacci series</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+  <div>
+    <p>This is a program to display 10 fibonacci numbers</p>
+  </div>
+  <script type="text/javascript">
+    var a, b, c;
+    a = 0;
+    b = 1;
+    document.write(" - " + a + " - " + b + " - ");
+    for (var i = 0; i < 8; i++) {
+      c = a + b;
+      a = c;
+      b = a;
+      document.write(c + " - ");
+    }
+    
+  </script>
+</body>
+</html>
