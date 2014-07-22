@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Copy text to another element</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+  <div>
+    <p>This is program to copy text using javascript.</p>
+    <section class="section" id="section">
+      <form action="#">
+        <div class="form-group">
+          <input type="text" class="form-control" id="input1">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="input2">
+        </div>
+        <button class="btn btn-primary" onclick="copyText()">Copy text</button>
+      </form>
+    </section>
+  </div>
+  <script type="text/javascript">
+    var copyText = function () {
+      var inputField1 = document.getElementById("input1");
+      var inputField2 = document.getElementById("input2");
+      inputField2.value = inputField1.value;
+    }
+  </script>
+</body>
+</html>
