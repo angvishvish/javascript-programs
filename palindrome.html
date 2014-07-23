@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript form validation</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+  <div>
+    <p>This program is check whether a number is palindrome or not.</p>
+    <section class="section" id="section">
+      <p class="result" id="result"></p>
+      <button class="btn btn-primary btn-block" onclick="checkPalindrome()">Check Palindrome</button>
+    </section>
+  </div>
+  <script type="text/javascript">
+    var checkPalindrome = function () {
+      var reverseString = "";
+      var userString = prompt("Do you want to continue ?");
+      var resultant = document.getElementById('result');
+      for (var i = userString.length; i >= 0 ; i-- ) {
+        reverseString = reverseString + userString.charAt(i);
+      }
+      if (reverseString == userString) {
+        resultant.innerHTML = reverseString + " Palindrome";
+      } else {
+        resultant.innerHTML = reverseString + " Not a Palindrome";
+      }
+    }
+  </script>
+</body>
+</html>
