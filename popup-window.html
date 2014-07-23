@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript form validation</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+  <div>
+    <p>This program will navigate user to google.com if he confirms it..</p>
+    <section class="section" id="section">
+      <button class="btn btn-primary btn-block" onclick="popupWindow()">Popup window</button>
+    </section>
+  </div>
+  <script type="text/javascript">
+    var popupWindow = function () {
+      var confirmation = confirm("Do you want to continue ?");
+      if (confirmation == true) {
+        window.location="http://www.google.com/";
+      } else {
+        window.location="http://www.google.in/";
+      }
+    }
+  </script>
+</body>
+</html>
