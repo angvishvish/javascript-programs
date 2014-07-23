@@ -2,25 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Javascript Pop-up window</title>
+  <title>Javascript check even odd</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body class="container">
   <div>
-    <p>This program will navigate user to google.com if he confirms it..</p>
+    <p>This program is check whether a number is even or odd</p>
     <section class="section" id="section">
-      <button class="btn btn-primary btn-block" onclick="popupWindow()">Popup window</button>
+      <p class="result" id="result"></p>
+      <button class="btn btn-primary btn-block" onclick="checkPalindrome()">Even - Odd</button>
     </section>
   </div>
   <script type="text/javascript">
-    var popupWindow = function () {
-      var confirmation = confirm("Do you want to continue ?");
-      if (confirmation == true) {
-        window.location="http://www.google.com/";
+    var checkPalindrome = function () {
+      var resultant = document.getElementById('result')
+      var num = prompt('Please enter a number');
+      if (num % 2 == 0) {
+        resultant.innerHTML = "Even";
       } else {
-        window.location="http://www.google.in/";
+        resultant.innerHTML = "Odd";
       }
     }
   </script>
