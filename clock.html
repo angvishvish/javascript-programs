@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript clock</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body onload="timeIs()">
+  <div class="container">
+    <div class="well">
+      <span>Clock : </span>
+      <span class="hour badge" id="hour"></span>:
+      <span class="minutes badge" id="minutes"></span>:
+      <span class="seconds badge" id="seconds"></span>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var todaysDate, secondHand, minutesHand, hourHand;
+    var hour = document.getElementById('hour');
+    var minutes = document.getElementById('minutes');
+    var seconds = document.getElementById('seconds');
+
+    var timeIs = function () {
+      getDateTime();
+      var checkHour = checktime(hourHand);
+      var checkMinutes = checktime(minutesHand);
+      var checkSeconds = checktime(secondHand);
+      hour.innerHTML = checkHour;
+      minutes.innerHTML = checkMinutes;
+      seconds.innerHTML = checkSeconds;
+      var updateTime = setTimeout(function () {
+        timeIs();
+      }, 1000);
+    }
+    var getDateTime = function () {
+      todaysDate = new Date();
+      secondHand = todaysDate.getSeconds();
+      minutesHand = todaysDate.getMinutes();
+      hourHand = todaysDate.getHours();
+    }
+    var checktime = function (time) {
+      if (time < 10) {
+        return ("0" + time);
+      }
+      return time;
+    }
+  </script>
+</body>
+</html>
