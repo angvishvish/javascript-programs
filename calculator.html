@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript clock</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="well">
+      <form action="#" class="form">
+        <div class="form-group"><input type="text" class="form-control firstNum" id="firstNum" autofocus></div>
+        <div class="form-group"><input type="text" class="form-control secondNum" id="secondNum"></div>
+        <div class="form-group">
+          <select name="" id="selectEquation" class="form-control selectEquation">
+            <option value="1">Addition</option>
+            <option value="2">Substration</option>
+            <option value="3">Multiplication</option>
+            <option value="4">Division</option>
+          </select>
+        </div>
+        <div class="form-group"><span class="result" id="result"></span></div>
+        <a onclick="equate()" class="btn btn-success btn-block equate" id="equate">Equate</a>
+      </form>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var firstNum = document.getElementById('firstNum');
+    var secondNum = document.getElementById('secondNum');
+    var selectEquation = document.getElementById('selectEquation');
+    var result = document.getElementById('result');
+    
+    var equate = function () {
+      if (selectEquation.value == 1) {
+        result.innerHTML = parseInt(firstNum.value) + parseInt(secondNum.value);
+      } else if (selectEquation.value == 2) {
+        result.innerHTML = parseInt(firstNum.value) - parseInt(secondNum.value);
+      } else if (selectEquation.value == 3) {
+        result.innerHTML = parseInt(firstNum.value) * parseInt(secondNum.value);
+      } else {
+        result.innerHTML = parseInt(firstNum.value) / parseInt(secondNum.value);
+      }
+    }
+  </script>
+</body>
+</html>
