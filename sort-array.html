@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript sort an array</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+  <div>
+    <p>This program is to sort an array.</p>
+    <section class="section" id="section">
+      <p class="array" id="array"></p>
+      <p class="afterArrays" id="afterArrays"></p>
+      <button class="btn btn-primary btn-block" onclick="sortArray()">Sort the array</button>
+    </section>
+  </div>
+  <script type="text/javascript">
+    var array = document.getElementById('array');
+    var afterArrays = document.getElementById('afterArrays');
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    var str = "";
+    for (var i = 0; i < fruits.length; i++) {
+      str = str + " - " + fruits[i];
+    }
+    array.innerHTML = str;
+    str = "";
+    var sortArray = function () {
+      fruits.sort();
+      for (var i = 0; i < fruits.length; i++) {
+        str = str + " - " + fruits[i];
+      }
+      afterArrays.innerHTML = str;
+    }
+  </script>
+</body>
+</html>
