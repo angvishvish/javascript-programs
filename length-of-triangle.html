@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Length of triangle</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+  <div>
+    <p>This is program to copy text using javascript.</p>
+    <section class="section" id="section">
+      <form action="#">
+        <div class="form-group">
+          <input type="text" class="form-control" id="hypotenus" autofocus>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="base">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="height">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="result">
+        </div>
+        <button class="btn btn-primary" onclick="triangleLength()">Length of triangle</button>
+      </form>
+    </section>
+  </div>
+  <script type="text/javascript">
+    var triangleLength = function () {
+      var hypotenus = document.getElementById("hypotenus").value;
+      var base = document.getElementById("base").value;
+      var height = document.getElementById("height").value;
+      var result = document.getElementById("result");
+      var lengthOfTriangle = parseInt(height) + parseInt(base) + parseInt(hypotenus);
+      result.value = lengthOfTriangle;
+    }
+  </script>
+</body>
+</html>
